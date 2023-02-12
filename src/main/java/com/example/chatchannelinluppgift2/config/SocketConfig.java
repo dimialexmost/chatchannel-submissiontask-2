@@ -21,8 +21,10 @@ public class SocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(channelStateSocketHandler, SOCKET_PREFIX + "/channels");
+        registry.addHandler(chatRoomStateSocketHandler, SOCKET_PREFIX + "/chat");
 
+        /* Specify the chat id in the header to connect to the corresponding chat */
+        registry.addHandler(channelStateSocketHandler, SOCKET_PREFIX + "/channels");
 
     }
 }
