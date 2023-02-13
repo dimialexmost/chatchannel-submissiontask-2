@@ -28,7 +28,7 @@ public class ChannelStateSocketHandler extends TextWebSocketHandler {
 
     public void broadcast(String message, WebSocketSession webSocketSession) {
         try {
-            for (WebSocketSession webSession : sessions) { // broadcast
+            for (WebSocketSession webSession : sessions) {
 
                 if (!webSocketSession.equals(webSession)) {
                     webSession.sendMessage(new TextMessage(message));
@@ -41,7 +41,7 @@ public class ChannelStateSocketHandler extends TextWebSocketHandler {
 
     public void broadcast(Channel channel) {
         try {
-            for (WebSocketSession webSession : sessions) { // broadcast
+            for (WebSocketSession webSession : sessions) {
 
                 webSession.sendMessage(new TextMessage("Channel " + channel.getTitle() +
                         " was created with id " + channel.getId()));
