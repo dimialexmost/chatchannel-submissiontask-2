@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/channels")
+@RequestMapping("/channels/")
 @AllArgsConstructor
 public class ChatController {
 

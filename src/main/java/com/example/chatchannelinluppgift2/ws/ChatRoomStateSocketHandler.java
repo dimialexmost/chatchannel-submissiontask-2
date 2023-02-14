@@ -21,7 +21,7 @@ public class ChatRoomStateSocketHandler extends TextWebSocketHandler {
     }
     public void broadcast(String channel, String message, WebSocketSession webSocketSession) {
         try {
-            for (WebSocketSession webSession : sessions.get(channel)) { // broadcast
+            for (WebSocketSession webSession : sessions.get(channel)) {
 
                 if(!webSocketSession.equals(webSession)) {
                     webSession.sendMessage(new TextMessage(message));
